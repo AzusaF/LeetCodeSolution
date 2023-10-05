@@ -7,15 +7,19 @@ class Solution(object):
         """
         length= len(nums)
         temp = [0]*length
-        print(length)
+        # print(length)
         for i in range (0,length,1):
-            if k > i:
-                # print("k>i")  
-                # print("length-1-k+i:", length-k+i)
-                temp[i] = nums[length-k+i]
+            if k <= length:
+                if k > i:
+                    # print("k>i")  
+                    # print("length-1-k+i:", length-k+i)
+                    temp[i] = nums[length-k+i]
+                else:
+                    temp[i] = nums[i-k]
             else:
-                temp[i] = nums[i-k]
+                # Think later
         # print(temp)
         # print(nums)
-        nums = temp
+        for i in range (0,length,1):
+            nums[i] = temp[i]
         print(nums)
