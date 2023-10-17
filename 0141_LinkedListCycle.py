@@ -10,17 +10,13 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        indexes =[]
-        current = head
-        if current is None:
+        if head is None:
             return False
-        while current.next:
-            current = current.next
-            print("current:", current)
-            if current.next is None:
+        slow = head
+        fast = head.next
+        while slow != fast:
+            if fast is None or fast.next is None:
                 return False
-            indexes.append(current)
-            for item in indexes:
-                if item == current:
-                    return True
-        return False
+            slow = slow.next
+            fast = fast.next.next
+        return True
