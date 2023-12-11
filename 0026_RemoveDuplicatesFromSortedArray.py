@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
         k = 1
-        nums[0] = nums[0]
+        # nums[0] = nums[0]
         for i in range(1,len(nums),1):
             # print(nums[i])
             if nums[i] != nums[i-1]:
