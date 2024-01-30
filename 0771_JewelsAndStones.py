@@ -1,16 +1,16 @@
 '''
 Runtime
-14
+11
 ms
 Beats
-67.95%
+85.04%
 of users with Python
 ---
 Memory
-11.77
+11.59
 MB
 Beats
-89.13%
+98.53%
 of users with Python
 '''
 class Solution(object):
@@ -21,17 +21,6 @@ class Solution(object):
         :rtype: int
         """
         numOfJewels = 0
-        originalStones = stones
         for jewel in jewels:
-            # print(jewel)
-            idx = 0
-            stones = originalStones
-            while idx != -1:
-                # print(stones)
-                # print(jewel)
-                # print(idx)
-                idx = stones.find(jewel)
-                if idx != -1:
-                    stones = stones[(idx+1):]
-                    numOfJewels += 1
+            numOfJewels += stones.count(jewel)
         return numOfJewels
